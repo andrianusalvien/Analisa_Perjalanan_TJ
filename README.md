@@ -1,133 +1,78 @@
-🚍 Analisis Data Perjalanan TransJakarta
-Urban Mobility Data Analysis – Portfolio Project
+# 🚍 Analisis Data Perjalanan TransJakarta  
+*Urban Mobility Insight using Data Analytics*
 
-Proyek ini bertujuan menganalisis data perjalanan TransJakarta untuk memahami pola mobilitas penumpang, rute populer, serta faktor yang memengaruhi kepadatan dan kualitas layanan. Dengan memanfaatkan data transaksi penumpang sebanyak 189.500 baris (April 2023), analisis ini memberikan insight untuk mendukung perencanaan transportasi publik yang lebih efisien dan berorientasi pada pengguna.
+Proyek ini menganalisis **189.500 transaksi perjalanan TransJakarta (April 2023)** untuk memahami pola mobilitas penumpang, rute populer, jam sibuk, serta karakteristik pengguna. Hasil analisis digunakan untuk memberikan rekomendasi peningkatan layanan transportasi publik di Jakarta.
 
-📌 Tujuan Proyek
+---
 
-Mengidentifikasi pola perjalanan berdasarkan waktu, usia, dan demografi.
+## 📌 Project Objectives
+- Mengidentifikasi pola perjalanan berdasarkan usia, gender, dan waktu.
+- Mengetahui halte dan rute dengan aktivitas tertinggi.
+- Menganalisis jam sibuk dan perbedaan weekday–weekend.
+- Memberikan rekomendasi berbasis data untuk peningkatan kualitas layanan.
 
-Mengetahui halte dan rute dengan aktivitas tertinggi.
+---
 
-Menganalisis jam sibuk serta tren weekday vs weekend.
+## 📂 Dataset Overview
+- **Total Rows:** 189,500  
+- **Total Columns:** 22  
+- **Data Source:** Simulasi data transaksi perjalanan TransJakarta (April 2023)  
+- **Key Fields:**  
+  - `transID`  
+  - `corridorName`  
+  - `tapInStopsName`, `tapOutStopsName`  
+  - `tapInTime`, `tapOutTime`  
+  - `payCardGender`, `payCardBirthDate`  
+  - `payAmount`  
 
-Memberikan rekomendasi untuk peningkatan kualitas layanan TransJakarta.
+---
 
-📂 Struktur Dataset
+## 🛠️ Tools & Tech Stack
+- Python  
+- Pandas  
+- NumPy  
+- Matplotlib / Seaborn  
+- Jupyter Notebook  
 
-Dataset berisi 22 kolom, di antaranya:
+---
 
-transID – ID unik transaksi
+## 📊 Key Findings
+### **1. Demografi Pengguna**
+- Pengguna didominasi usia **30–39 tahun**.  
+- Usia >50 relatif kecil jumlahnya.
 
-payCardID, payCardBank, payCardSex, payCardBirthDate – informasi dasar pengguna
+### **2. Pola Gender**
+- Laki-laki 53%  
+- Perempuan 47%
 
-corridorID, corridorName – informasi rute
+### **3. Halte dengan Tap-In Tertinggi**
+- Penjaringan  
+- BKN  
+- Rusun Penjaringan
 
-tapInStops / tapOutStops – titik naik dan turun
+### **4. Rute Paling Sibuk**
+- Penjaringan → Rusun Penjaringan  
+- Rusun Penjaringan → Penjaringan
 
-tapInTime / tapOutTime – waktu perjalanan
+### **5. Jam Sibuk**
+- **06:00–08:00** dan **17:00–18:00**
 
-payAmount – tarif perjalanan
+### **6. Perbedaan Weekday vs Weekend**
+- Tinggi pada Senin–Jumat  
+- Turun signifikan pada Sabtu–Minggu
 
-Koordinat halte – tap in & tap out latitude/longitude
+---
 
-Total: 189.500 baris data perjalanan penumpang.
+## 🚌 Recommendations
+- Tambah frekuensi bus pada jam sibuk.
+- Optimalkan manajemen antrian di halte padat.
+- Buat program promo untuk meningkatkan ridership weekend.
+- Fokuskan fasilitas pendukung untuk usia produktif (20–39).
+- Monitor kapasitas rute populer untuk mencegah overload.
 
-🛠 Metodologi
+---
 
-Proyek ini diselesaikan dengan pendekatan CRISP-DM, meliputi:
-
-Project Definition
-
-Data Understanding
-
-Data Preparation & Cleaning
-
-Exploratory Data Analysis (EDA)
-
-Insight Generation
-
-Reporting & Recommendation
-
-📊 Hasil Analisis & Insight
-1. Demografi Penumpang
-
-Dominan usia 30–39 tahun.
-
-Usia 20–29 juga tinggi, sedangkan usia >50 cukup rendah.
-
-2. Pola Gender
-
-Penumpang laki-laki dan perempuan relatif seimbang
-(≈ 53% vs 47%).
-
-3. Aktivitas Halte
-
-Halte dengan tap-in tertinggi: Penjaringan, BKN, dan Rusun Penjaringan.
-
-Dominasi area permukiman dan akses LRT.
-
-4. Rute Terpopuler
-
-Penjaringan ↔ Rusun Penjaringan menjadi rute dengan volume tertinggi.
-
-5. Jam Sibuk
-
-Dua puncak:
-
-06:00–08:00 (berangkat kerja/sekolah)
-
-17:00–18:00 (pulang kerja/sekolah)
-
-6. Tren Harian
-
-Ridership stabil pada weekday.
-
-Menurun drastis pada akhir pekan.
-
-🚌 Rekomendasi
-
-Optimalisasi Armada di Jam Sibuk
-Tingkatkan frekuensi bus pada 06:00–08:00 dan 17:00–18:00.
-
-Penguatan Layanan di Halte Padat
-Atur ulang alur antrian dan kapasitas halte seperti Penjaringan & BKN.
-
-Strategi Weekend Ridership
-Buat program tarif khusus atau kolaborasi dengan destinasi wisata.
-
-Segmentasi Berdasarkan Usia Pengguna
-Fokuskan fasilitas seperti Wi-Fi & charging port untuk usia produktif (20–39).
-
-Monitoring Rute Populer
-Khususnya Penjaringan – Rusun Penjaringan untuk menghindari overload.
-
-🧩 Tools & Libraries
-
-Python
-
-Pandas
-
-NumPy
-
-Matplotlib / Seaborn
-
-Geopandas (opsional)
-
-Jupyter Notebook
-
-📁 Isi Repository
-📦 transjakarta-analysis
- ┣ 📜 notebook.ipynb
- ┣ 📜 README.md
- ┣ 📂 data
- ┃ ┗ transjakarta_april2023.csv
- ┗ 📂 images
-    ┗ charts & visualizations
-
-🙌 Acknowledgment
-
-Proyek ini dibuat sebagai bagian dari pembelajaran di Dibimbing.id, dan menjadi latihan penting dalam memahami data transportasi publik serta penerapannya untuk pengambilan keputusan.
+## 📸 Visual Preview
 
 
 <img src ="Dashboard_TJ.jpg">
